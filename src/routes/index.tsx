@@ -11,14 +11,19 @@ import {
   Reveal,
   WHATSAPP_URL,
 } from "@/components/landing/primitives";
-// Temporary image hosting: the original photographs remain on the published Lovable CDN
-// until the client supplies final image files. These URLs are public and production-safe.
+// Fotografias clínicas fornecidas pelo cliente e otimizadas localmente para a landing page.
+// Os nomes priorizam descrições conservadoras quando o procedimento exato não pode ser confirmado apenas pela imagem.
 const drIgorPhoto = "https://smile-elevated.lovable.app/__l5e/assets-v1/9ce7e582-b768-4509-a14f-53edbd5f2f15/dr-igor-consultorio.webp";
-const caso01 = "https://smile-elevated.lovable.app/__l5e/assets-v1/7c1d7927-0add-4faa-a8dd-e464b8db3936/10-facetas-em-resina-arcada-superior.jpg";
-const caso02 = "https://smile-elevated.lovable.app/__l5e/assets-v1/f10d98d2-6187-450b-9bbb-eb127e40ff7a/caso-clinico-estetico-nao-identificado-01.jpg";
-const caso03 = "https://smile-elevated.lovable.app/__l5e/assets-v1/abece630-a268-4f97-a23a-5b703eed8387/facetas-em-resina-composta-tecnica-mao-livre.jpg";
-const caso04 = "https://smile-elevated.lovable.app/__l5e/assets-v1/3bd3f801-8827-434f-801f-980bf3d53a6c/caso-estetico-com-selecao-de-cor-nao-identificado-03.jpg";
-const caso05 = "https://smile-elevated.lovable.app/__l5e/assets-v1/df716150-3147-4c95-8e08-0facd24c95e3/caso-clinico-estetico-nao-identificado-02.jpg";
+
+const esteticaSorriso = "/casos/estetica-sorriso-antes-depois.webp";
+const restauracaoAnterior = "/casos/restauracao-estetica-dente-anterior.webp";
+const reabilitacaoOralRetrato = "/casos/reabilitacao-oral-retrato-antes-depois.webp";
+const transformacaoEsteticaMasculino = "/casos/transformacao-estetica-sorriso-masculino.webp";
+const harmonizacaoEstetica = "/casos/harmonizacao-estetica-sorriso.webp";
+const reabilitacaoProteticaAnterior = "/casos/reabilitacao-protetica-anterior.webp";
+const reabilitacaoEstetica = "/casos/reabilitacao-estetica-sorriso.webp";
+const reabilitacaoProteticaRetrato = "/casos/reabilitacao-protetica-retrato.webp";
+const reabilitacaoImplantesInferior = "/casos/reabilitacao-sobre-implantes-inferior.webp";
 
 const GOOGLE_REVIEWS_URL =
   "https://www.google.com/search?q=igor+lopardi&oq=igor&gs_lcrp=EgZjaHJvbWUqBggAEEUYOzIGCAAQRRg7MgYIARBFGDkyBwgCEAAYjwIyBwgDEAAYjwIyBwgEEAAYjwIyBggFEEUYPDIGCAYQRRg8MgYIBxBFGDzSAQgxMDIyajBqN6gCALACAA&sourceid=chrome&source=chrome.ob&ie=UTF-8#lrd=0xb83f97e79f6429:0xa9072bdc6936f674,1,,,,";
@@ -29,33 +34,33 @@ const PHONE_SCHEMA = "+5527999552299";
 const CASES = [
   {
     n: "01",
-    src: caso01,
-    alt: "Antes e depois: 10 facetas em resina na arcada superior",
-    label: "10 facetas em resina — arcada superior",
+    src: transformacaoEsteticaMasculino,
+    alt: "Antes e depois de transformação estética do sorriso masculino",
+    label: "Transformação estética do sorriso",
   },
   {
     n: "02",
-    src: caso03,
-    alt: "Antes e depois: facetas em resina composta em técnica mão livre",
-    label: "Facetas em resina composta — técnica mão livre",
+    src: harmonizacaoEstetica,
+    alt: "Antes e depois de harmonização estética do sorriso",
+    label: "Harmonização estética do sorriso",
   },
   {
     n: "03",
-    src: caso02,
-    alt: "Antes e depois: fechamento de diastema e harmonização do sorriso",
-    label: "Fechamento de diastema e harmonização do sorriso",
+    src: reabilitacaoProteticaAnterior,
+    alt: "Antes e depois de reabilitação protética na região anterior",
+    label: "Reabilitação protética — região anterior",
   },
   {
     n: "04",
-    src: caso04,
-    alt: "Caso estético com seleção de cor e resultado final do sorriso",
-    label: "Caso estético com seleção de cor",
+    src: reabilitacaoEstetica,
+    alt: "Antes e depois de reabilitação estética do sorriso",
+    label: "Reabilitação estética do sorriso",
   },
   {
     n: "05",
-    src: caso05,
-    alt: "Antes e depois: reabilitação estética em vista lateral",
-    label: "Reabilitação estética — vista lateral",
+    src: reabilitacaoProteticaRetrato,
+    alt: "Antes e depois de reabilitação protética com recuperação do sorriso",
+    label: "Reabilitação protética e estética",
   },
 ];
 
@@ -85,8 +90,8 @@ const TREATMENTS = [
     desc: "Para quem deseja melhorar a aparência dos dentes, corrigir pequenas alterações e conquistar um sorriso mais harmônico.",
     tags: "Clareamento • Restaurações estéticas • Tratamentos estéticos",
     cta: "CONHECER ESTÉTICA",
-    image: caso01,
-    imageAlt: "Resultado estético do sorriso com facetas em resina",
+    image: esteticaSorriso,
+    imageAlt: "Antes e depois de harmonização estética do sorriso",
     span: true,
   },
   {
@@ -95,8 +100,8 @@ const TREATMENTS = [
     desc: "Para recuperar dentes comprometidos e devolver ao sorriso mais equilíbrio, conforto e função.",
     tags: "Planejamento reabilitador • Recuperação funcional • Reabilitação estética",
     cta: "CONHECER REABILITAÇÃO",
-    image: caso05,
-    imageAlt: "Reabilitação estética do sorriso em vista lateral",
+    image: reabilitacaoOralRetrato,
+    imageAlt: "Antes e depois de reabilitação oral com recuperação estética do sorriso",
     span: false,
   },
   {
@@ -105,8 +110,8 @@ const TREATMENTS = [
     desc: "Soluções planejadas para substituir dentes ausentes ou recuperar dentes comprometidos, buscando devolver estética e função.",
     tags: "Próteses dentárias • Reabilitação protética",
     cta: "CONHECER PRÓTESES",
-    image: caso04,
-    imageAlt: "Seleção de cor durante planejamento estético do sorriso",
+    image: reabilitacaoImplantesInferior,
+    imageAlt: "Etapas clínicas de reabilitação sobre implantes na arcada inferior",
     span: false,
   },
   {
@@ -115,8 +120,8 @@ const TREATMENTS = [
     desc: "O cuidado essencial para manter a saúde bucal, tratar problemas e evitar que pequenos sinais se transformem em grandes problemas.",
     tags: "Avaliação • Prevenção • Restaurações • Cuidados gerais",
     cta: "CONHECER TRATAMENTOS",
-    image: caso03,
-    imageAlt: "Detalhe de facetas em resina composta finalizadas",
+    image: restauracaoAnterior,
+    imageAlt: "Antes e depois de restauração estética em dente anterior",
     span: true,
   },
 ];
